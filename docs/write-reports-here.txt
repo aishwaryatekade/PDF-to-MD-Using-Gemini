@@ -11,3 +11,5 @@ okay
 
 ab commit kaise krne ka dekh
 abhi tak jitna bhi likha hai na wo save means record hua hai 
+dekh commit kiya meaning ful message dalna hota hai waha par tera first time hai isilieyy vaisa kiya maine 
+abhi push kruga mai hello
