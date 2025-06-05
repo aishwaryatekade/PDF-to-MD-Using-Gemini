@@ -1,7 +1,14 @@
 def main():
-    print("Hello world...")
+   import fitz
+def extract_text(pdf path):
+    documnet = fitz.open(pdf_path)
+    all_text = ""
+    for page in document:
+    all_text += page.get_text()
+    document.close()
+    return all_text
+     
 
 
-if __name__ == '__main__':
-    main()
-
+if _name_ == '_main_':
+    main()

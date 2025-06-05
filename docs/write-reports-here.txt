@@ -2,9 +2,9 @@ Write reports for every commit in this directory
 
 this is the first commit ...    
 
-sbse pehele terminal me virtual env activate krne ka 
+sbse phle terminal me virtual env activate krne ka
 
-abhi env activate ho gaya hai 
+abhi env activate ho gya  hai 
 
 run ho gaya code 
 okay
@@ -13,3 +13,8 @@ ab commit kaise krne ka dekh
 abhi tak jitna bhi likha hai na wo save means record hua hai 
 dekh commit kiya meaning ful message dalna hota hai waha par tera first time hai isilieyy vaisa kiya maine 
 abhi push kruga mai hello
+
+dekh aa gaya waha par
+
+phle initialize project setup kiya with basic pdf text gitextraction
+ 
