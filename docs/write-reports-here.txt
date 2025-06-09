@@ -18,3 +18,9 @@ dekh aa gaya waha par
 
 phle initialize project setup kiya with basic pdf text gitextraction
  
+
+ is comit me ek main script add ki gyi  hai joh pdf file ko extract karta hai 
+ GEMINI AI se uska sumarization karata hai 
+ or phir us summary ko markdown file mein save krta hai. 
+ ye file handler or gemini client helper modules ke sath integrate hai. 
+ code project ke root level pe se run karna hota  hai  taki utils folder sahi detect ho.
