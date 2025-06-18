@@ -16,33 +16,45 @@ def extract_text_from_pdf(pdf_path):
             text += page.get_text()
     return text
 
-# ✅ Step 2: Text ko Gemini API pe bhejna
-def send_text_to_gemini_api(extracted_text):
-    api_endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
-
-
+def send_text_to_gemini_api(content):
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
     headers = {
         "Content-Type": "application/json"
     }
     payload = {
         "contents": [
             {
-                "parts": [{"text": extracted_text}]
+                "parts": [
+                    {
+                        "text": content
+                    }
+                ]
             }
         ]
     }
-    response = requests.post(api_endpoint, headers=headers, json=payload)
-    response.raise_for_status()
-    return response.json()['candidates'][0]['content']['parts'][0]['text']
 
-# ✅ Step 3: Text ko markdown me convert karna
-def format_text_to_markdown(processed_text):
-    return processed_text.replace('\n', '  \n')
+    response = requests.post(
+        f"{url}?key={GEMINI_API_KEY}",
+        headers=headers,
+        json=payload
+    )
+
+    response.raise_for_status()
+    result = response.json()
+    return result["candidates"][0]["content"]["parts"][0]["text"]
+
+
+
+# ✅ Step 3: Gemini se mila plain text ko Markdown format me convert karne ka function (basic placeholder)
+def format_text_to_markdown(text):
+    # You can improve this later; for now, return as-is
+    return text
 
 # ✅ Step 4: Markdown file me likhna
 def write_markdown_to_file(markdown_output, file_path):
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write(markdown_output)
+
 
 # ✅ Step 5: Pura process execute karna
 def execute_conversion(pdf_file):
@@ -55,7 +67,20 @@ def execute_conversion(pdf_file):
 
 # ✅ Run the program
 if __name__ == "__main__":
-    pdf_path = "../resumeat.pdf"  # ✅ correct relative path
+    import sys
+
+    if len(sys.argv) < 2:
+        print("❌ Please provide the PDF filename as an argument.")
+        print("✅ Example: python main.py resumeat.pdf")
+        sys.exit(1)
+
+    relative_pdf_path = sys.argv[1]
+
+    # Make path absolute based on project root
+    pdf_path = os.path.abspath(relative_pdf_path)
+
+
+
+
+    print("📄 Full path:", pdf_path)
     execute_conversion(pdf_path)
-
-
