@@ -31,3 +31,5 @@ python -m venv .venv
 - _NO CODE SHARING_. Every intern must have their own unique code and project style. Same rules as above for violation of this rule.
 - Any number of files can be created depending on the neccesity and use.
 - Do not clutter the main.py file, try and create multiple files for different logic sections (Eg: converter.py handle the conversion using gemini, filesystem_update.py creates and updated directories and files in filesystem).
+
+
