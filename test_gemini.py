@@ -1,4 +1,5 @@
-print("✅ Script started")
+from dotenv import load_dotenv
+load_dotenv()
 
 import os
 import fitz  # PyMuPDF
@@ -98,7 +99,8 @@ if __name__ == "__main__":
     import sys
 
     parser = argparse.ArgumentParser(description="Convert PDF to Markdown using Gemini AI.")
-    parser.add_argument("pdf_file", nargs="?", default="resumeat.pdf", help="Path to the input PDF file.")
+    parser.add_argument("pdf_file", nargs="?", default="Lstm.pdf", help="Path to the input PDF file.")
+
     parser.add_argument("-o", "--output_dir", default=".", help="Directory to save the output Markdown file.")
 
     args = parser.parse_args()
@@ -109,4 +111,6 @@ if __name__ == "__main__":
         print(f"🎉 Done! Markdown saved at: {output}")
     else:
         print("❌ Failed to convert PDF.")
+        
+
         
