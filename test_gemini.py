@@ -1,3 +1,5 @@
+print("✅ Script started")
+
 import os
 import fitz  # PyMuPDF
 import textwrap
